@@ -1,0 +1,32 @@
+data_args:
+  batch_size: 12
+  train_years: [2017, 2018, 2019, 2020, 2021, 2022]  
+  val_years: [2023]  
+  test_years: [2024]  
+  data_dir: 'daily_processed_dataset'
+  embedding_dir: 'daily_processed_dataset/embedded_dir'
+  climatology_dir: 'daily_processed_dataset/climatology.pkl'
+  percentile_dir: "daily_processed_dataset/percentile.pkl"
+  cache_dir: "daily_processed_dataset"
+  input_length: 1 
+  output_length: 1  
+  num_healpix_nodes: 12288
+  var_num: 6  
+  healpix_base_level: 3
+  healpix_max_level: 5
+  healpix_num_neighbors: 10
+
+model_args:
+  diffusion_T: 50  
+  hidden_size: 64
+  head: 4  
+  time_emb_dim: 16  
+  learning_rate: 0.001  
+  flow_T: 50
+  flow_hidden_size: 64 
+  flow_res_blocks: 3
+  epochs: 20
+  t_max: 500 
+  num_workers: 16
+  sh_before: True
+  sh_after: True
